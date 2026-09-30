@@ -1,0 +1,45 @@
+    1  sudo groupadd students
+    2  sudo useradd -u 1234 -g students user1
+    3  sudo chage -M 90 user1
+    4  sudo find / -type f -perm -4000 -ls
+    5  sudo find / -type f -perm -4000 -ls > suid.txt
+    6  ps -eo pid,ruid,euid,comm
+    7  ps -eo pid,ruid,euid,comm | awk '$2 >= 1000 && $3 == 0'
+    8  ps -eo pid,ruid,euid,comm | awk '$2 >= 1000 && $3 == 0' > proc.txt
+    9  whereis cat
+   10  cp /usr/bin/cat ~/
+   11  ls -la
+   12  cat /etc/passwd
+   13  cat /etc/shadow
+   14  ./cat /etc/shadow
+   15  sudo setcap "cap_dac_read_search=ep" cat
+   16  ./cat /etc/shadow
+   17  rm ./cat
+   18  cp /usr/bin/cat .
+   19  sudo chown root:root: ./cat
+   20  sudo chown root:root ./cat
+   21  sudo chmod u+s ./cat
+   22  ./cat /etc/shadow
+   23  ls -la ./cat
+   24  ls -la /usr/bin/cat
+   25  whereis chown 
+   26  cp /usr/bin/chown .
+   27  sudo setcap cap_chown+ep ./chown 
+   28  getcap ./chown 
+   29  touch temp.txt
+   30  chown root:root ./temp.txt 
+   31  ./chown root:root ./temp.txt 
+   32  cat /etc/sudoers
+   33  sudo cat /etc/sudoers
+   34  sudo visudo
+   35  sudo -u user1
+   36  sudo -su user1
+   37  sudo -l -U user1
+   38  sudo -su user1
+   39  sudo visudo
+   40  sudo -l -U user1
+   41  sudo -su user1
+   42  sudo visudo
+   43  sudo -su user1
+   44  M265216
+   45  history > ./history.out
